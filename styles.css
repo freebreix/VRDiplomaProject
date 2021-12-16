@@ -1,0 +1,318 @@
+html {
+	height: 100vh;
+	background-image: url('img/bg.png');
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    -webkit-background-size: 100%;
+}
+
+body {
+	margin: 0;
+	height: 100vh;
+	background-color: rgba(0, 38, 61, .9);
+}
+
+@font-face {
+	font-family: Montserrat;
+	src: url(Montserrat-Regular.ttf);
+}
+
+@font-face {
+	font-family: Montserrat SB;
+	src: url(Montserrat-SemiBold.ttf);
+}
+
+@font-face {
+	font-family: Roboto;
+	src: url(Roboto-Regular.ttf);
+}
+
+h1 {
+	margin: 0;
+	font-family: Montserrat SB;
+	font-size: 100px;
+	color: white;
+}
+
+h2 {
+	margin: 0;
+	font-family: Montserrat;
+	font-size: 50px;
+	color: white;
+}
+
+h3 {
+	margin: 0;
+	font-family: Montserrat SB;
+	font-size: 50px;
+	color: white;
+}
+
+p {
+	max-width: 800px;
+	font-size: 20px;
+	color: azure;
+	font-family: Montserrat;
+}
+
+.htl-logo {
+	background-image: url(https://www.htl-kapfenberg.at/joomla/images/logos/HTL_LOGO_142x53.svg);
+	width: 142px;
+	height: 53px;
+	position: absolute;
+	opacity: .6;
+}
+
+.pi-logo {
+	background-image: url(http://www.easyedge.io/wp-content/uploads/2021/04/raspberry-pi.png);
+	width: 200px;
+	height: 53px;
+	background-size: cover;
+	position: absolute;
+	margin-left: 200px;
+	opacity: .6;
+}
+
+.htl-logo:hover {
+	opacity: .8;
+}
+
+.pi-logo:hover {
+	opacity: .8;
+}
+
+.left {
+	position: absolute;
+	margin-left: 150px;
+	margin-top: 40vh;
+}
+
+.right {
+	float: right;
+	margin-right: 100px;
+}
+
+.right-content {
+	position: relative;
+	float: right;
+	margin-right: 300px;
+	margin-top: 30vh;
+}
+
+.bg-mask {
+    height: 100vh;
+	width: 100vw;
+	position: absolute;
+    background-image: url('img/bg.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background-size: cover; */
+	-webkit-background-size: 100%;
+	-webkit-mask-image: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 75%);
+    -webkit-mask-position: calc(var(--mouseX) * 1px) calc(var(--mouseY) * 1px);
+    -webkit-mask-size: 500px 500px;
+    -webkit-mask-repeat: no-repeat;
+}
+
+.profile {
+	position: absolute;
+	margin-top: 30vh;
+	margin-left: 300px;
+	width: 350px;
+	height: 460px;
+	background-image: url(https://avatars.githubusercontent.com/u/29557337?v=4);
+	background-repeat: no-repeat;
+	background-position: -60px;
+	animation: float 1s infinite alternate;
+	box-shadow: 0 0 10px aqua;
+	border-radius: 30px;
+	display: flex;
+}
+
+.profile > p {
+	font-family: Consolas;
+	color: aqua;
+	align-self: flex-end;
+	opacity: .7;
+	text-shadow: 0 0 5px aqua;
+	margin: 0 0 -30px 95px;
+}
+
+.showcase {
+	display: flex;
+	position: absolute;
+	height: 400px;
+	width: 400px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 0 0 20px aqua;
+	border-radius: 30px;
+}
+
+.line {
+	position: absolute;
+	height: 2px;
+	background-color: aqua;
+	box-shadow: 0 0 3px aqua;
+	width: 300px;
+	transform: rotate(-45deg);
+}
+
+.card {
+	position: relative;
+	width: 679px;
+	height: 675px;
+	margin-top: 100px;
+	background-image: url(img/img1.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+	animation: float 1s infinite alternate;
+}
+
+.holo {
+	position: relative;
+	z-index: 2;
+	width: 250px;
+	height: 5px;
+	margin: -5px auto 0;
+	background-color: rgba(0, 252, 252, 0.35);
+	border-radius: 100%;
+	filter: blur(2.5px);
+	transform: perspective(100px) rotateX(-30deg);
+	transform-style: preserve-3d;
+	animation: holographic 1.5s infinite alternate;
+	backface-visibility: hidden;
+}
+
+.holo:after {
+	position: absolute;
+	left: -10px;
+	right: -10px;
+	content: "";
+	height: 10px;
+	background-color: rgba(0, 252, 252, 0.5);
+	border-radius: 100%;
+	filter: blur(2.5px);
+}
+
+.holo + .holo {
+	animation-duration: .75s;
+	opacity: .5;
+}
+
+@keyframes float {
+	from {
+		will-change: unset;
+		transform: translateY(-10px);
+	}
+
+	to {
+		will-change: transform;
+		transform: translateY(-30px);
+	}
+}
+
+@keyframes holographic {
+	from {
+		will-change: box-shadow;
+		box-shadow: 0 -75px 5px rgba(0, 252, 252, 0.15), 0 -1px 2px rgba(0, 252, 252, 0.5), 0 -45px 5px rgba(0, 252, 252, 0.15), 0 -2px 3px rgba(0, 252, 252, 0.5), 0 -3px 4px rgba(0, 252, 252, 0.5), 0 -4px 6px rgba(0, 252, 252, 0.5), 0 -5px 10px rgba(0, 252, 252, 0.75), 0 -7px 20px rgba(0, 252, 252, 0.75), 0 -10px 30px rgba(0, 252, 252, 0.75), 0 -15px 40px rgba(0, 252, 252, 0.75), 0 -25px 50px rgba(0, 252, 252, 0.75), 0 -35px 60px rgba(0, 252, 252, 0.85), 0 -45px 70px rgba(0, 252, 252, 0.95), 0 -65px 80px #00fcfc, 0 -75px 90px #00fcfc;
+	}
+
+	to {
+		will-change: unset;
+		box-shadow: 0 -1px 5px rgba(0, 252, 252, 0.15), 0 -1px 2px rgba(0, 252, 252, 0.5), 0 -1px 5px rgba(0, 252, 252, 0.15), 0 -2px 3px rgba(0, 252, 252, 0.5), 0 -3px 4px rgba(0, 252, 252, 0.5), 0 -4px 6px rgba(0, 252, 252, 0.5), 0 -5px 7px rgba(0, 252, 252, 0.75), 0 -7px 10px rgba(0, 252, 252, 0.75), 0 -10px 15px rgba(0, 252, 252, 0.75), 0 -15px 20px rgba(0, 252, 252, 0.75), 0 -25px 25px rgba(0, 252, 252, 0.75), 0 -35px 30px rgba(0, 252, 252, 0.85), 0 -45px 35px rgba(0, 252, 252, 0.95), 0 -65px 40px #00fcfc, 0 -75px 50px #00fcfc;
+	}
+}
+
+@import url("https://fonts.googleapis.com/css?family=Mukta:700");
+
+
+button {
+	font-family: 'Mukta', sans-serif;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	border: 0;
+	vertical-align: middle;
+	text-decoration: none;
+	background: transparent;
+	padding: 0;
+	font-size: inherit;
+}
+
+button.learn-more {
+	width: 13rem;
+	height: auto;
+	margin-top: 75px;
+}
+
+button.learn-more .circle {
+	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	position: relative;
+	display: block;
+	margin: 0;
+	width: 3rem;
+	height: 3rem;
+	background: #003254;
+	border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	left: 0.625rem;
+	width: 1.125rem;
+	height: 0.125rem;
+	background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+	position: absolute;
+	content: '';
+	top: -0.25rem;
+	right: 0.0625rem;
+	width: 0.625rem;
+	height: 0.625rem;
+	border-top: 0.125rem solid aqua;
+	border-right: 0.125rem solid aqua;
+	transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+	transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 0.75rem 0;
+	margin: 0 0 0 1.85rem;
+	color: aqua;
+	font-weight: 700;
+	line-height: 1.6;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+button:hover .circle {
+	width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+	background: aqua;
+	transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+	color: aquamarine;
+}
